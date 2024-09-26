@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const exampleRoute = require('./routes/exampleRoute');
 const homeRoute = require('./routes/homeRoute');
+const uploadRoute = require('./routes/uploadRoute');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,8 @@ app.use(bodyParser.json());     // Parse JSON bodies
 app.use('/api/example', exampleRoute);
 
 app.use('/', homeRoute);
+
+app.use('/upload', uploadRoute);
 
 
 // Catch-all error handler
